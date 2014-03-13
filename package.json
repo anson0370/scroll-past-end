@@ -1,8 +1,10 @@
 {
-  "name": "Scroll Past End",
+  "name": "scroll-past-end",
   "main": "./lib/scroll-past-end",
   "version": "0.0.0",
   "description": "scroll past end",
+  "readme": "In the process",
+  "readmeFilename": "README.md",
   "repository": "https://github.com/anson0370/scroll-past-end",
   "license": "MIT",
   "engines": {
