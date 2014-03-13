@@ -1,0 +1,13 @@
+{
+  "name": "Scroll Past End",
+  "main": "./lib/scroll-past-end",
+  "version": "0.0.0",
+  "description": "scroll past end",
+  "repository": "https://github.com/anson0370/scroll-past-end",
+  "license": "MIT",
+  "engines": {
+    "atom": ">0.50.0"
+  },
+  "dependencies": {
+  }
+}
