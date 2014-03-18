@@ -1,7 +1,7 @@
 module.exports =
   activate: ->
     {EditorView} = require "atom"
-    EditorView.prototype.updateLayerDimensions = ->
+    EditorView::updateLayerDimensions = ->
       height = @lineHeight * @editor.getScreenLineCount()
       # patch code start
       if @closest(".pane").length > 0 && atom.workspaceView.getActiveView() instanceof EditorView
