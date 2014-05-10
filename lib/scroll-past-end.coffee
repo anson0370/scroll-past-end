@@ -1,11 +1,17 @@
 module.exports =
+  configDefaults:
+    retainHalfScreen: false
+
   activate: ->
     {EditorView} = require "atom"
     EditorView::updateLayerDimensions = ->
       height = @lineHeight * @editor.getScreenLineCount()
       # patch code start
       if @closest(".pane").length > 0 && atom.workspaceView.getActiveView() instanceof EditorView
-        height = height + @height() - (@lineHeight * 3)
+        if atom.config.get("scroll-past-end").retainHalfScreen
+          height = height + @height() / 2
+        else
+          height = height + @height() - (@lineHeight * 3)
       # patch code end
       if @layerHeight != height
         @layerHeight = height
