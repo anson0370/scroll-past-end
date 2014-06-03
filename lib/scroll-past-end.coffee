@@ -6,14 +6,14 @@ module.exports =
     # patch for react editor
     DisplayBuffer = require "src/display-buffer"
     DisplayBuffer::getScrollHeight = ->
-      if not @getLineHeight() > 0
+      if not @getLineHeightInPixels() > 0
         throw new Error("You must assign lineHeight before calling ::getScrollHeight()")
       # patch code start
-      height = @getLineCount() * @getLineHeight()
+      height = @getLineCount() * @getLineHeightInPixels()
       if atom.config.get("scroll-past-end").retainHalfScreen
         height = height + @getHeight() / 2
       else
-        height = height + @getHeight() - (@getLineHeight() * 3)
+        height = height + @getHeight() - (@getLineHeightInPixels() * 3)
       # patch code end
       height
 
