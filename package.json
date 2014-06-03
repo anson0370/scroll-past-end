@@ -1,7 +1,7 @@
 {
   "name": "scroll-past-end",
   "main": "./lib/scroll-past-end",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "scroll past end",
   "readme": "In the process",
   "readmeFilename": "README.md",
