@@ -9,12 +9,13 @@ module.exports =
       # patch code start
       lineHeight = if @getLineHeight then @getLineHeight() else @getLineHeightInPixels()
       return 0 unless lineHeight > 0
-      height = @getLineCount() * lineHeight
-      if atom.config.get("scroll-past-end").retainHalfScreen
-        height = height + @getHeight() / 2
-      else
-        height = height + @getHeight() - (lineHeight * 3)
-      height
+      scrollHeight = @getLineCount() * lineHeight
+      if @height?
+        if atom.config.get("scroll-past-end").retainHalfScreen
+          scrollHeight = scrollHeight + @height / 2
+        else
+          scrollHeight = scrollHeight + @height - (lineHeight * 3)
+      scrollHeight
       # patch code end
 
     # patch for classic editor
